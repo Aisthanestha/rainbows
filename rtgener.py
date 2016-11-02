@@ -3,7 +3,7 @@ import os
 print "start of script..."
 
 os.system("cd /usr/share/rainbowcrack")
-tableS=raw_input("How many table indexes would you like?")
+tableS=int(raw_input("How many table indexes would you like?"))
 for i in range (0, tableS):
         os.system("rtgen md5 loweralpha-numeric 6 6 %s 3500 100000 0" % i)
 
