@@ -3,16 +3,17 @@ import os
 print "start of script..."
 
 os.system("cd /usr/share/rainbowcrack")
-wildCard = "*"
 for i in range (0, 10):
         os.system("rtgen md5 loweralpha-numeric 6 6 %s 3500 100000 0" % i)
-os.system("rtsort %s.rt" % wildCard ) 
-mkHash= raw_input("string to be made into md5 hash")
-os.system("echo -n %s | md5sum | cat >> hash.txt" % mkHash)
-os.system("cp hash.txt hash1.txt")
-os.system("sed -e 's/-//' hash1.txt > hash.txt")
-os.system("rm hash1.txt")
-os.system("rcrack %s.rt -l " % wildCard)
+os.system("rtsort md5*.rt") 
+while agaiN="1":
+        mkHash= raw_input("string to be made into md5 hash:\n")
+        os.system("echo -n %s | md5sum | cat >> hash.txt" % mkHash)
+        os.system("cp hash.txt hash1.txt")
+        os.system("sed -e 's/-//' hash1.txt > hash.txt")
+        os.system("rm hash1.txt")
+        agaiN= raw_input("another hash?y/n")
+os.system("rcrack md5_*.rt -l ")
 
 
 
