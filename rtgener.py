@@ -5,8 +5,8 @@ print "start of script..."
 os.system("cd /usr/share/rainbowcrack")
 for i in range (0, 10):
         os.system("rtgen md5 loweralpha-numeric 6 6 %s 3500 100000 0" % i)
-for x in range (0,10):
-        os.system("rtsort md5_loweralpha-numeric#6-6_%s_3500x100000_0.rt" % x)
+
+os.system("rtsort /usr/share/rainbowcrack/*.rt")
 
 agaiN="y"
 
@@ -18,9 +18,6 @@ while agaiN =="y":
         os.system("rm /usr/share/rainbowcrack/hash1.txt")
         agaiN= raw_input("another hash?y/n")
 
-for z in range (0,10):
-        os.system("rcrack md5_loweralpha-numeric#6-6_%s_3500x100000_0.rt -l /usr/share/rainbowcrack/hash.txt" % z)
-
-
+os.system("rcrack /usr/share/rainbowcrack/*.rt -l /usr/share/rainbowcrack/hash.txt")
 
 print "end of script..."
