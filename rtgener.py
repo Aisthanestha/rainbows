@@ -12,14 +12,14 @@ agaiN="y"
 
 while agaiN =="y":
         mkHash= raw_input("string to be made into md5 hash:\n")
-        os.system("echo -n %s | md5sum | cat >> hash.txt" % mkHash)
-        os.system("cp hash.txt hash1.txt")
-        os.system("sed -e 's/-//' hash1.txt > hash.txt")
-        os.system("rm hash1.txt")
+        os.system("echo -n %s | md5sum | cat >> /usr/share/rainbowcrack/hash.txt" % mkHash)
+        os.system("cp /usr/share/rainbowcrack/hash.txt /usr/share/rainbowcrack/hash1.txt")
+        os.system("sed -e 's/-//' /usr/share/rainbowcrack/hash1.txt > /usr/share/rainbowcrack/hash.txt")
+        os.system("rm /usr/share/rainbowcrack/hash1.txt")
         agaiN= raw_input("another hash?y/n")
 
 for z in range (0,10):
-        os.system("rcrack md5_loweralpha-numeric#6-6_%s_3500x100000_0.rt -l hash.txt" % z)
+        os.system("rcrack md5_loweralpha-numeric#6-6_%s_3500x100000_0.rt -l /usr/share/rainbowcrack/hash.txt" % z)
 
 
 
