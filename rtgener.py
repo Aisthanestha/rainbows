@@ -3,7 +3,8 @@ import os
 print "start of script..."
 
 os.system("cd /usr/share/rainbowcrack")
-for i in range (0, 10):
+tableS=raw_input("How many table indexes would you like?")
+for i in range (0, tableS):
         os.system("rtgen md5 loweralpha-numeric 6 6 %s 3500 100000 0" % i)
 
 os.system("rtsort /usr/share/rainbowcrack/*.rt")
