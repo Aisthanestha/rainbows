@@ -5,15 +5,21 @@ print "start of script..."
 os.system("cd /usr/share/rainbowcrack")
 for i in range (0, 10):
         os.system("rtgen md5 loweralpha-numeric 6 6 %s 3500 100000 0" % i)
-os.system("rtsort md5*.rt") 
-while agaiN="1":
+for x in range (0,10)
+        os.system("rtsort md5_loweralpha-numeric#6_6_%s_3500_100000_0.rt" % x)
+
+agaiN="y"
+
+while agaiN =="y":
         mkHash= raw_input("string to be made into md5 hash:\n")
         os.system("echo -n %s | md5sum | cat >> hash.txt" % mkHash)
         os.system("cp hash.txt hash1.txt")
         os.system("sed -e 's/-//' hash1.txt > hash.txt")
         os.system("rm hash1.txt")
         agaiN= raw_input("another hash?y/n")
-os.system("rcrack md5_*.rt -l ")
+
+for z in range (0,10)
+        os.system("rcrack md5_loweralpha-numeric#6_6_%s_3500_100000_0.rt -l hash.txt" % z)
 
 
 
